@@ -62,3 +62,5 @@ function replaceContent() {
     }
   }
 }
+
+setInterval(replaceContent, 500);
