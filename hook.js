@@ -24,13 +24,13 @@ function replaceContent() {
       isXiao = true;
       xiaoIndex = index;
     }
-    if (element.textContent === "谢智豪") {
+    if (element.textContent === "谢智毫") {
       isXie = true;
     }
-    if (element.textContent === "周涛") {
+    if (element.textContent === "周寿") {
       isZhou = true;
     }
-    if (element.textContent === "黄铭洋") {
+    if (element.textContent === "黄铭样") {
       isHuang = true;
     }
   });
