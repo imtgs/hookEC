@@ -24,13 +24,13 @@ function replaceContent() {
       isXiao = true;
       xiaoIndex = index;
     }
-    if (element.textContent === "谢智毫") {
+    if (element.textContent === "谢智豪") {
       isXie = true;
     }
-    if (element.textContent === "周寿") {
+    if (element.textContent === "周涛") {
       isZhou = true;
     }
-    if (element.textContent === "黄铭样") {
+    if (element.textContent === "黄铭洋") {
       isHuang = true;
     }
   });
@@ -39,25 +39,25 @@ function replaceContent() {
     if (isXie && isZhou && isHuang) {
       return;
     } else if (isXie && isZhou) {
-      elements[xiaoIndex].textContent = "黄铭洋";
+      elements[xiaoIndex].textContent = "黄铭样";
       elements1[xiaoIndex].src = huangImg;
     } else if (isXie && isHuang) {
-      elements[xiaoIndex].textContent = "周涛";
+      elements[xiaoIndex].textContent = "周寿";
       elements1[xiaoIndex].src = zhouImg;
     } else if (isZhou && isHuang) {
-      elements[xiaoIndex].textContent = "谢智豪";
+      elements[xiaoIndex].textContent = "谢智毫";
       elements1[xiaoIndex].src = xieImg;
     } else if (isXie) {
-      elements[xiaoIndex].textContent = "周涛";
+      elements[xiaoIndex].textContent = "周寿";
       elements1[xiaoIndex].src = zhouImg;
     } else if (isZhou) {
-      elements[xiaoIndex].textContent = "谢智豪";
+      elements[xiaoIndex].textContent = "谢智毫";
       elements1[xiaoIndex].src = xieImg;
     } else if (isHuang) {
-      elements[xiaoIndex].textContent = "谢智豪";
+      elements[xiaoIndex].textContent = "谢智毫";
       elements1[xiaoIndex].src = xieImg;
     } else {
-      elements[xiaoIndex].textContent = "谢智豪";
+      elements[xiaoIndex].textContent = "谢智毫";
       elements1[xiaoIndex].src = xieImg;
     }
   }
