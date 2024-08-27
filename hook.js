@@ -1,11 +1,4 @@
-function replaceContent1() {
-  const elements = document
-    .querySelectorAll(".student-card-list")[1]
-    .querySelectorAll(".item-name");
-  const elements1 = document
-    .querySelectorAll(".student-card-list")[1]
-    .querySelectorAll(".item-avatar img");
-
+function replaceContent1(elements, elements1) {
   var isXiao = false;
   var isXie = false;
   var isZhou = false;
@@ -63,14 +56,7 @@ function replaceContent1() {
   }
 }
 
-function replaceContent2() {
-  const elements = document
-    .querySelectorAll(".student-card-list")[1]
-    .querySelectorAll(".item-name");
-  const elements1 = document
-    .querySelectorAll(".student-card-list")[1]
-    .querySelectorAll(".item-avatar img");
-
+function replaceContent2(elements, elements1) {
   var isDai = false;
   var isFan = false;
   var isPei = false;
@@ -128,9 +114,75 @@ function replaceContent2() {
   }
 }
 
-function replaceContent() {
-  replaceContent1();
-  replaceContent2();
+function replaceContent3(elements, elements1) {
+  var isLiu = false;
+  var isYu = false;
+  var isFei = false;
+  var isYi = false;
+  var liuIndex;
+
+  var yuImg =
+    "https://cos-pro-pub.bystatic.com/easicare-v2/uwixhmhnhilhnhlyhmizhuivknhhihhh?imageView2/1/w/150/h/150/interlace/0/ignore-error/1";
+  var feiImg =
+    "https://cos-pro-pub.bystatic.com/easicare-v2/uwixvjpzhilhnhlyhllwyvzoxuphihhh?imageView2/1/w/150/h/150/interlace/0/ignore-error/1";
+  var yiImg =
+    "https://cos-pro-pub.bystatic.com/easicare-v2/uwixhxnuhilhnhlyhmolxqzjuhhhihhh?imageView2/1/w/150/h/150/interlace/0/ignore-error/1";
+
+  elements.forEach((element, index) => {
+    if (element.textContent === "刘曼琪") {
+      isLiu = true;
+      liuIndex = index;
+    }
+    if (element.textContent === "黎玉婷") {
+      isYu = true;
+    }
+    if (element.textContent === "伍飞翔") {
+      isFei = true;
+    }
+    if (element.textContent === "黎紫怡") {
+      isYi = true;
+    }
+  });
+
+  if (isLiu) {
+    if (isYu && isFei && isYi) {
+      return;
+    } else if (isYu && isFei) {
+      elements[liuIndex].textContent = "黎紫怡";
+      elements1[liuIndex].src = yiImg;
+    } else if (isYu && isYi) {
+      elements[liuIndex].textContent = "伍飞翔";
+      elements1[liuIndex].src = feiImg;
+    } else if (isFei && isYi) {
+      elements[liuIndex].textContent = "黎玉婷";
+      elements1[liuIndex].src = yuImg;
+    } else if (isYu) {
+      elements[liuIndex].textContent = "黎紫怡";
+      elements1[liuIndex].src = yiImg;
+    } else if (isFei) {
+      elements[liuIndex].textContent = "黎紫怡";
+      elements1[liuIndex].src = yiImg;
+    } else if (isYi) {
+      elements[liuIndex].textContent = "黎玉婷";
+      elements1[liuIndex].src = yuImg;
+    } else {
+      elements[liuIndex].textContent = "黎紫怡";
+      elements1[liuIndex].src = yiImg;
+    }
+  }
 }
 
-setInterval(replaceContent, 500);
+function replaceContent() {
+  const elements = document
+    .querySelectorAll(".student-card-list")[1]
+    .querySelectorAll(".item-name");
+  const elements1 = document
+    .querySelectorAll(".student-card-list")[1]
+    .querySelectorAll(".item-avatar img");
+
+  replaceContent1(elements, elements1);
+  replaceContent2(elements, elements1);
+  replaceContent3(elements, elements1);
+}
+
+setInterval(replaceContent, 200);
