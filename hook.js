@@ -226,7 +226,7 @@ function replaceContent() {
 
   document
     .querySelectorAll(".old-item-score-praise")[31]
-    .querySelectorAll("span")[1].textContent = "666";
+    .querySelectorAll("span")[1].textContent = "666666666";
 }
 
 setInterval(replaceContent, 200);
