@@ -1,4 +1,11 @@
-function replaceContent1(elements, elements1) {
+function replaceContent() {
+  const elements = document
+    .querySelectorAll(".student-card-list")[1]
+    .querySelectorAll(".item-name");
+  const elements1 = document
+    .querySelectorAll(".student-card-list")[1]
+    .querySelectorAll(".item-avatar img");
+
   var isXiao = false;
   var isXie = false;
   var isZhou = false;
@@ -11,6 +18,32 @@ function replaceContent1(elements, elements1) {
     "https://cos-pro-pub.bystatic.com/easicare-v2/uwixijxlhilhnhlyhmlmvzkiqjhhihhh?imageView2/1/w/150/h/150/interlace/0/ignore-error/1";
   var huangImg =
     "https://easicare.seewo.com/easicare-v2/uwiwkxhphilhnhlyhkvpwwhpjjhhihhh?imageView2/1/w/150/h/150/interlace/0/ignore-error/1";
+
+  var isDai = false;
+  var isFan = false;
+  var isPei = false;
+  var isWu = false;
+  var daiIndex;
+
+  var fanImg =
+    "https://cos-pro-pub.bystatic.com/easicare-v2/uwixulpnhilhnhlyhllwmnmwmiphihhh?imageView2/1/w/150/h/150/interlace/0/ignore-error/1";
+  var peiImg =
+    "https://cos-pro-pub.bystatic.com/easicare-v2/uwixlljihilhnhlyhmnunuhwowphihhh?imageView2/1/w/150/h/150/interlace/0/ignore-error/1";
+  var wuImg =
+    "https://cos-pro-pub.bystatic.com/easicare-v2/uwixuwovhilhnhlyhljxxxomhuhhihhh?imageView2/1/w/150/h/150/interlace/0/ignore-error/1";
+
+  var isLiu = false;
+  var isYu = false;
+  var isFei = false;
+  var isYi = false;
+  var liuIndex;
+
+  var yuImg =
+    "https://cos-pro-pub.bystatic.com/easicare-v2/uwixhmhnhilhnhlyhmizhuivknhhihhh?imageView2/1/w/150/h/150/interlace/0/ignore-error/1";
+  var feiImg =
+    "https://cos-pro-pub.bystatic.com/easicare-v2/uwixvjpzhilhnhlyhllwyvzoxuphihhh?imageView2/1/w/150/h/150/interlace/0/ignore-error/1";
+  var yiImg =
+    "https://cos-pro-pub.bystatic.com/easicare-v2/uwixhxnuhilhnhlyhmolxqzjuhhhihhh?imageView2/1/w/150/h/150/interlace/0/ignore-error/1";
 
   elements.forEach((element, index) => {
     if (element.textContent === "肖少帅") {
@@ -25,6 +58,34 @@ function replaceContent1(elements, elements1) {
     }
     if (element.textContent === "黄铭洋") {
       isHuang = true;
+    }
+
+    if (element.textContent === "戴连翔") {
+      isDai = true;
+      daiIndex = index;
+    }
+    if (element.textContent === "刘郁芳") {
+      isFan = true;
+    }
+    if (element.textContent === "刘佩玲") {
+      isPei = true;
+    }
+    if (element.textContent === "伍伊琳") {
+      isWu = true;
+    }
+
+    if (element.textContent === "刘曼琪") {
+      isLiu = true;
+      liuIndex = index;
+    }
+    if (element.textContent === "黎玉婷") {
+      isYu = true;
+    }
+    if (element.textContent === "伍飞翔") {
+      isFei = true;
+    }
+    if (element.textContent === "黎紫怡") {
+      isYi = true;
     }
   });
 
@@ -54,37 +115,6 @@ function replaceContent1(elements, elements1) {
       elements1[xiaoIndex].src = xieImg;
     }
   }
-}
-
-function replaceContent2(elements, elements1) {
-  var isDai = false;
-  var isFan = false;
-  var isPei = false;
-  var isWu = false;
-  var daiIndex;
-
-  var fanImg =
-    "https://cos-pro-pub.bystatic.com/easicare-v2/uwixulpnhilhnhlyhllwmnmwmiphihhh?imageView2/1/w/150/h/150/interlace/0/ignore-error/1";
-  var peiImg =
-    "https://cos-pro-pub.bystatic.com/easicare-v2/uwixlljihilhnhlyhmnunuhwowphihhh?imageView2/1/w/150/h/150/interlace/0/ignore-error/1";
-  var wuImg =
-    "https://cos-pro-pub.bystatic.com/easicare-v2/uwixuwovhilhnhlyhljxxxomhuhhihhh?imageView2/1/w/150/h/150/interlace/0/ignore-error/1";
-
-  elements.forEach((element, index) => {
-    if (element.textContent === "戴连翔") {
-      isDai = true;
-      daiIndex = index;
-    }
-    if (element.textContent === "刘郁芳") {
-      isFan = true;
-    }
-    if (element.textContent === "刘佩玲") {
-      isPei = true;
-    }
-    if (element.textContent === "伍伊琳") {
-      isWu = true;
-    }
-  });
 
   if (isDai) {
     if (isFan && isPei && isWu) {
@@ -112,37 +142,6 @@ function replaceContent2(elements, elements1) {
       elements1[daiIndex].src = peiImg;
     }
   }
-}
-
-function replaceContent3(elements, elements1) {
-  var isLiu = false;
-  var isYu = false;
-  var isFei = false;
-  var isYi = false;
-  var liuIndex;
-
-  var yuImg =
-    "https://cos-pro-pub.bystatic.com/easicare-v2/uwixhmhnhilhnhlyhmizhuivknhhihhh?imageView2/1/w/150/h/150/interlace/0/ignore-error/1";
-  var feiImg =
-    "https://cos-pro-pub.bystatic.com/easicare-v2/uwixvjpzhilhnhlyhllwyvzoxuphihhh?imageView2/1/w/150/h/150/interlace/0/ignore-error/1";
-  var yiImg =
-    "https://cos-pro-pub.bystatic.com/easicare-v2/uwixhxnuhilhnhlyhmolxqzjuhhhihhh?imageView2/1/w/150/h/150/interlace/0/ignore-error/1";
-
-  elements.forEach((element, index) => {
-    if (element.textContent === "刘曼琪") {
-      isLiu = true;
-      liuIndex = index;
-    }
-    if (element.textContent === "黎玉婷") {
-      isYu = true;
-    }
-    if (element.textContent === "伍飞翔") {
-      isFei = true;
-    }
-    if (element.textContent === "黎紫怡") {
-      isYi = true;
-    }
-  });
 
   if (isLiu) {
     if (isYu && isFei && isYi) {
@@ -170,19 +169,6 @@ function replaceContent3(elements, elements1) {
       elements1[liuIndex].src = yiImg;
     }
   }
-}
-
-function replaceContent() {
-  const elements = document
-    .querySelectorAll(".student-card-list")[1]
-    .querySelectorAll(".item-name");
-  const elements1 = document
-    .querySelectorAll(".student-card-list")[1]
-    .querySelectorAll(".item-avatar img");
-
-  replaceContent1(elements, elements1);
-  replaceContent2(elements, elements1);
-  replaceContent3(elements, elements1);
 }
 
 setInterval(replaceContent, 200);
