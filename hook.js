@@ -1,4 +1,10 @@
 function replaceContent() {
+  document
+    .querySelectorAll(".old-item-score-praise")[31]
+    .querySelectorAll("span")[1].textContent = "看不";
+  document.querySelectorAll(".old-item-score-criticism")[31].textContent =
+    "见我";
+
   const elements = document
     .querySelectorAll(".student-card-list")[1]
     .querySelectorAll(".item-name");
@@ -223,10 +229,6 @@ function replaceContent() {
       elements1[hanIndex].src = tangImg;
     }
   }
-
-  document
-    .querySelectorAll(".old-item-score-praise")[31]
-    .querySelectorAll("span")[1].textContent = "666666666";
 }
 
 setInterval(replaceContent, 200);
