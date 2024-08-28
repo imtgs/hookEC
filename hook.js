@@ -45,6 +45,19 @@ function replaceContent() {
   var yiImg =
     "https://cos-pro-pub.bystatic.com/easicare-v2/uwixhxnuhilhnhlyhmolxqzjuhhhihhh?imageView2/1/w/150/h/150/interlace/0/ignore-error/1";
 
+  var isHan = false;
+  var isYong = false;
+  var isChen = false;
+  var isTang = false;
+  var hanIndex;
+
+  var yongImg =
+    "https://cos-pro-pub.bystatic.com/easicare-v2/uwixlmvphilhnhlyhmwqxuwokxphihhh?imageView2/1/w/150/h/150/interlace/0/ignore-error/1";
+  var chenImg =
+    "https://easicare.seewo.com/easicare-v2/uwiwlmhuhilhnhlyhkvjmouxhpphihhh?imageView2/1/w/150/h/150/interlace/0/ignore-error/1";
+  var tangImg =
+    "https://easicare.seewo.com/easicare-v2/uwiwlnnxhilhnhlyhkxxhimohwphihhh?imageView2/1/w/150/h/150/interlace/0/ignore-error/1";
+
   elements.forEach((element, index) => {
     if (element.textContent === "肖少帅") {
       isXiao = true;
@@ -86,6 +99,20 @@ function replaceContent() {
     }
     if (element.textContent === "黎紫怡") {
       isYi = true;
+    }
+
+    if (element.textContent === "李怡函") {
+      isHan = true;
+      hanIndex = index;
+    }
+    if (element.textContent === "谢乐勇") {
+      isYong = true;
+    }
+    if (element.textContent === "陈峥") {
+      isChen = true;
+    }
+    if (element.textContent === "唐依漫") {
+      isTang = true;
     }
   });
 
@@ -169,6 +196,37 @@ function replaceContent() {
       elements1[liuIndex].src = yiImg;
     }
   }
+
+  if (isHan) {
+    if (isYong && isChen && isTang) {
+      return;
+    } else if (isYong && isChen) {
+      elements[hanIndex].textContent = "唐依漫";
+      elements1[hanIndex].src = tangImg;
+    } else if (isYong && isTang) {
+      elements[hanIndex].textContent = "陈峥";
+      elements1[hanIndex].src = chenImg;
+    } else if (isChen && isTang) {
+      elements[hanIndex].textContent = "谢乐勇";
+      elements1[hanIndex].src = yongImg;
+    } else if (isYong) {
+      elements[hanIndex].textContent = "唐依漫";
+      elements1[hanIndex].src = tangImg;
+    } else if (isChen) {
+      elements[hanIndex].textContent = "唐依漫";
+      elements1[hanIndex].src = tangImg;
+    } else if (isTang) {
+      elements[hanIndex].textContent = "谢乐勇";
+      elements1[hanIndex].src = yongImg;
+    } else {
+      elements[hanIndex].textContent = "唐依漫";
+      elements1[hanIndex].src = tangImg;
+    }
+  }
+
+  document
+    .querySelectorAll(".old-item-score-praise")[31]
+    .querySelectorAll("span")[1].textContent = "666";
 }
 
 setInterval(replaceContent, 200);
